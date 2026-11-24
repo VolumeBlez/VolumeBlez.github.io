@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Заглушка кейса Steel Frontier">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1433"/><stop offset="1" stop-color="#080b14"/></linearGradient>
+    <radialGradient id="g" cx="70%" cy="35%" r="55%"><stop offset="0" stop-color="#8b7bff" stop-opacity=".28"/><stop offset="1" stop-color="#8b7bff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3370"/><stop offset="1" stop-color="#1b1a3a"/></linearGradient>
+    <filter id="b"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <ellipse cx="820" cy="260" rx="420" ry="270" fill="url(#g)"/>
+  <g stroke="#a99cff" stroke-opacity=".12"><path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M0 600H1200M200 0V675M400 0V675M600 0V675M800 0V675M1000 0V675"/></g>
+
+  <!-- мок интерфейса кампании -->
+  <g transform="translate(560 150)">
+    <rect width="500" height="380" rx="22" fill="#0e1120" fill-opacity=".85" stroke="#ffffff" stroke-opacity=".14"/>
+    <rect x="22" y="22" width="456" height="200" rx="14" fill="url(#card)"/>
+    <circle cx="250" cy="122" r="70" fill="#8b7bff" opacity=".25" filter="url(#b)"/>
+    <path d="M210 160 L250 80 L290 160 Z" fill="#c9c1ff"/>
+    <rect x="22" y="242" width="290" height="12" rx="6" fill="#ffffff" opacity=".18"/>
+    <rect x="22" y="268" width="220" height="12" rx="6" fill="#ffffff" opacity=".1"/>
+    <rect x="22" y="310" width="150" height="40" rx="10" fill="#a99cff"/>
+    <text x="45" y="336" font-family="monospace" font-size="14" font-weight="bold" fill="#141026">PLAY NOW</text>
+  </g>
+
+  <g font-family="monospace" fill="#eae7ff">
+    <text x="46" y="62" font-size="15" letter-spacing="3" opacity=".7">CASE 02 / CAMPAIGN</text>
+    <text x="46" y="130" font-size="50" font-weight="bold" letter-spacing="-1">STEEL FRONTIER</text>
+    <text x="46" y="162" font-size="15" fill="#b6a6ff">INTERACTIVE WEBGL PROMO</text>
+  </g>
+  <g transform="translate(46 570)">
+    <rect width="220" height="40" rx="9" fill="#0d141c" fill-opacity=".8" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="16" y="26" font-family="monospace" font-size="14" fill="#9fb0c4">ЗАГЛУШКА · замени на GIF</text>
+  </g>
+</svg>

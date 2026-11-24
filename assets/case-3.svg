@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Заглушка кейса Dungeon Crawler">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a160f"/><stop offset="0.6" stop-color="#130d12"/><stop offset="1" stop-color="#08090e"/></linearGradient>
+    <radialGradient id="g" cx="62%" cy="55%" r="50%"><stop offset="0" stop-color="#ff9d4d" stop-opacity=".26"/><stop offset="1" stop-color="#ff9d4d" stop-opacity="0"/></radialGradient>
+    <linearGradient id="torch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/></linearGradient>
+    <filter id="b"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <ellipse cx="760" cy="370" rx="400" ry="300" fill="url(#g)"/>
+
+  <!-- стены подземелья -->
+  <g stroke="#ffab6b" stroke-opacity=".16" stroke-width="2" fill="none">
+    <path d="M560 190 L760 190 L760 540 L560 540 Z"/>
+    <path d="M760 190 L1000 120 L1000 560 L760 540 Z"/>
+    <path d="M560 190 L400 130 L400 500 L560 540 Z"/>
+    <path d="M560 330 L760 330M560 460 L760 460M760 300 L1000 250M760 430 L1000 390"/>
+  </g>
+  <path d="M560 540 L760 540 L1000 560 L400 500 Z" fill="#1b1213" stroke="#ffab6b" stroke-opacity=".2"/>
+
+  <!-- факел -->
+  <g transform="translate(700 250)">
+    <path d="M0 0 L14 -60 L28 0 Z" fill="url(#torch)"/>
+    <circle cx="14" cy="-20" r="34" fill="#ffb35c" opacity=".35" filter="url(#b)"/>
+  </g>
+
+  <!-- герой -->
+  <g transform="translate(510 400)">
+    <ellipse cx="28" cy="115" rx="48" ry="10" fill="#ff9d4d" opacity=".3" filter="url(#b)"/>
+    <path d="M0 25 L28 8 L56 25 L28 42 Z" fill="#ffe0b0"/>
+    <path d="M0 25 L28 42 L28 100 L0 83 Z" fill="#a86a4a"/>
+    <path d="M56 25 L28 42 L28 100 L56 83 Z" fill="#d98a52"/>
+    <rect x="62" y="28" width="4" height="76" rx="2" fill="#e8c07d"/>
+    <path d="M60 20 L68 20 L70 44 L58 44 Z" fill="#ffd166"/>
+  </g>
+
+  <g font-family="monospace" fill="#fff0e2">
+    <text x="46" y="62" font-size="15" letter-spacing="3" opacity=".7">CASE 03 / PET PROJECT</text>
+    <text x="46" y="130" font-size="48" font-weight="bold" letter-spacing="-1">DUNGEON CRAWLER</text>
+    <text x="46" y="162" font-size="15" fill="#ffb775">ROGUELIKE · PROCEDURAL · SHADERS</text>
+  </g>
+  <g transform="translate(46 570)">
+    <rect width="220" height="40" rx="9" fill="#0d141c" fill-opacity=".8" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="16" y="26" font-family="monospace" font-size="14" fill="#9fb0c4">ЗАГЛУШКА · замени на GIF</text>
+  </g>
+</svg>

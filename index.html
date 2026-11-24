@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Иван Петров — Unity Developer</title>
+  <meta name="description" content="Портфолио Unity-разработчика: стек, опыт, кейсы с гифками и скриншотами.">
+  <meta property="og:title" content="Иван Петров — Unity Developer">
+  <meta property="og:description" content="Gameplay, tools и красивые проекты на Unity.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#080b10">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Наверх">
+        <span class="logo__mark">U</span>
+        <span class="logo__text">IVAN<span>.</span>DEV</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#about">О себе</a>
+        <a href="#stack">Стек</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="btn btn--small header__cta" href="mailto:hello@example.com">Обсудить проект</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <div class="badge"><span class="badge__dot"></span> Открыт к новым проектам</div>
+
+          <h1 class="hero__title">
+            Делаю игры,<br>
+            <span class="gradient-text">которые хочется доиграть</span>
+          </h1>
+
+          <p class="hero__role">
+            &gt; <span id="roleRotator">Unity Developer</span><span class="caret">_</span>
+          </p>
+
+          <!-- TODO: замени текст о себе, цифры в статистике ниже и ссылки -->
+          <p class="hero__text">
+            Привет! Я Иван — Unity-разработчик. Пишу геймплей, делаю инструменты для команды
+            и довожу визуал до состояния «приятно смотреть». Люблю быстрые прототипы,
+            чистый код и стабильные 60 FPS.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#cases">Смотреть кейсы <span aria-hidden="true">↘</span></a>
+            <a class="btn btn--ghost" href="mailto:hello@example.com">Написать мне</a>
+          </div>
+
+          <ul class="socials" aria-label="Соцсети">
+            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" data-delay="120">
+          <div class="visual-card">
+            <div class="visual-card__bar">
+              <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+              <span class="visual-card__file">scene.unity</span>
+            </div>
+            <img src="assets/hero-preview.svg" alt="Абстрактная игровая сцена — заглушка, замени на свой кадр" width="1200" height="900">
+            <div class="visual-card__caption"><span class="pill">URP</span> 1920×1080 · 60 FPS</div>
+          </div>
+          <div class="float-chip float-chip--one">C# <span>✓</span></div>
+          <div class="float-chip float-chip--two">Build <span>успешно</span></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="stats reveal" data-delay="200">
+          <div class="stat"><strong>3+</strong><span>года в Unity</span></div>
+          <div class="stat"><strong>12</strong><span>релизных проектов</span></div>
+          <div class="stat"><strong>60</strong><span>FPS как норма</span></div>
+          <div class="stat"><strong>∞</strong><span>кофе в баг-фиксе</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">01 / О себе</span>
+          <h2>Коротко и по делу</h2>
+          <p class="section-lead">От первых прототипов до проектов, которые уходят в релиз. Вот как это выглядело.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <p>
+              Я занимаюсь разработкой игр на Unity с 2021 года. Основной фокус —
+              <strong>геймплейные системы</strong>: управление, боевка, ИИ, прогрессия и всё то,
+              из чего складывается ощущение «игра живая».
+            </p>
+            <p>
+              Параллельно пишу редакторские инструменты: ускоряю сборку уровней, настраиваю
+              пайплайны ассетов и помогаю команде меньше времени тратить на рутину.
+              Умею аккуратно работать с существующим кодом и не бояться старых проектов.
+            </p>
+            <div class="about-card__links">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Мой GitHub <span aria-hidden="true">↗</span></a>
+              <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Написать в Telegram <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <!-- TODO: замени даты, должности и компании на свои -->
+          <div class="timeline reveal" data-delay="100">
+            <div class="timeline__item">
+              <span class="timeline__date">2024 — сейчас</span>
+              <h3>Unity Developer · Studio Name</h3>
+              <p>Геймплей, боевая система, оптимизация и инструменты для команды.</p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__date">2022 — 2024</span>
+              <h3>Junior Unity Developer · Indie Team</h3>
+              <p>Прототипы, UI, интеграция ассетов, поддержка мобильной версии.</p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__date">2021</span>
+              <h3>Старт · Game Jams и пет-проекты</h3>
+              <p>Первые сборки, первые баги и понимание, что это навсегда.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="section section--alt" id="stack">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">02 / Инструменты</span>
+          <h2>Стек, с которым работаю</h2>
+          <p class="section-lead">Не просто список названий — то, что реально использовал в боях.</p>
+        </div>
+
+        <!-- TODO: поправь список под свой реальный стек -->
+        <div class="stack-grid">
+          <div class="stack-col reveal">
+            <h3><span class="stack-col__icon">◆</span> Основы</h3>
+            <ul><li>Unity 2021 / 2022 / 6</li><li>C# / .NET</li><li>OOP, SOLID</li><li>Unity Test Framework</li></ul>
+          </div>
+          <div class="stack-col reveal" data-delay="60">
+            <h3><span class="stack-col__icon">◆</span> Геймплей</h3>
+            <ul><li>Cinemachine</li><li>DOTween</li><li>NavMesh / AI</li><li>Physics / Rigidbody</li></ul>
+          </div>
+          <div class="stack-col reveal" data-delay="120">
+            <h3><span class="stack-col__icon">◆</span> Графика</h3>
+            <ul><li>URP / HDRP</li><li>Shader Graph</li><li>VFX Graph</li><li>Post Processing</li></ul>
+          </div>
+          <div class="stack-col reveal" data-delay="180">
+            <h3><span class="stack-col__icon">◆</span> Процесс</h3>
+            <ul><li>Git / GitHub</li><li>Addressables</li><li>Odin Inspector</li><li>REST API / Firebase</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CASES ===== -->
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section-head section-head--row reveal">
+          <div>
+            <span class="eyebrow">03 / Кейсы</span>
+            <h2>Что я делал</h2>
+            <p class="section-lead">Гифки и кадры — заглушки. Замени их на свои файлы из папки <code>assets/</code>.</p>
+          </div>
+          <a class="text-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">Все проекты на GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <!-- TODO: замени заголовки, описания, метрики и картинки (assets/*.svg -> *.gif/*.png) -->
+        <article class="case case--featured reveal">
+          <button class="case__media" type="button" data-media="assets/case-1.svg" data-media-poster="assets/case-1.svg" data-caption="Neon Runner — игровой процесс (заглушка)">
+            <img src="assets/case-1.svg" alt="Кадр проекта Neon Runner — заглушка" loading="lazy" width="1200" height="675">
+            <span class="case__play" aria-hidden="true">▶</span>
+            <span class="case__hint">смотреть процесс</span>
+          </button>
+          <div class="case__body">
+            <div class="case__meta"><span class="tag tag--accent">Проект</span><span class="tag">Unity · Mobile</span><span class="tag">2025</span></div>
+            <h3>Neon Runner</h3>
+            <p>Мобильный endless-раннер с процедурной генерацией уровней и плавным управлением. Отвечал за геймплей, оптимизацию и интеграцию рекламы.</p>
+            <ul class="case__facts">
+              <li><strong>60 FPS</strong><span>на устройствах среднего класса</span></li>
+              <li><strong>−35%</strong><span>время загрузки сцены</span></li>
+            </ul>
+            <div class="case__tags"><span>C#</span><span>URP</span><span>Addressables</span><span> DOTween</span></div>
+          </div>
+        </article>
+
+        <div class="cases-grid">
+          <article class="case reveal">
+            <button class="case__media" type="button" data-media="assets/case-2.svg" data-media-poster="assets/case-2.svg" data-caption="Steel Frontier — интерактивная кампания (заглушка)">
+              <img src="assets/case-2.svg" alt="Кадр кампании Steel Frontier — заглушка" loading="lazy" width="1200" height="675">
+              <span class="case__play" aria-hidden="true">▶</span>
+              <span class="case__hint">смотреть процесс</span>
+            </button>
+            <div class="case__body">
+              <div class="case__meta"><span class="tag tag--accent">Кампания</span><span class="tag">WebGL</span></div>
+              <h3>Steel Frontier</h3>
+              <p>Интерактивная промо-кампания в браузере: мини-игра, сбор метрик и адаптация под мобильные экраны.</p>
+              <div class="case__tags"><span>Unity WebGL</span><span>UI</span><span>GSAP-подобные анимации</span></div>
+            </div>
+          </article>
+
+          <article class="case reveal" data-delay="80">
+            <button class="case__media" type="button" data-media="assets/case-3.svg" data-media-poster="assets/case-3.svg" data-caption="Dungeon Crawler — геймплей (заглушка)">
+              <img src="assets/case-3.svg" alt="Кадр проекта Dungeon Crawler — заглушка" loading="lazy" width="1200" height="675">
+              <span class="case__play" aria-hidden="true">▶</span>
+              <span class="case__hint">смотреть процесс</span>
+            </button>
+            <div class="case__body">
+              <div class="case__meta"><span class="tag tag--accent">Проект</span><span class="tag">PC · Roguelike</span></div>
+              <h3>Dungeon Crawler</h3>
+              <p>Пет-проект про подземелья: процедурные комнаты, система боёвки и прогрессия между забегами.</p>
+              <div class="case__tags"><span>C#</span><span>Shader Graph</span><span>Save System</span></div>
+            </div>
+          </article>
+
+          <article class="case reveal" data-delay="160">
+            <button class="case__media" type="button" data-media="assets/case-4.svg" data-media-poster="assets/case-4.svg" data-caption="Level Builder — редактор уровней (заглушка)">
+              <img src="assets/case-4.svg" alt="Скриншот инструмента Level Builder — заглушка" loading="lazy" width="1200" height="675">
+              <span class="case__play case__play--image" aria-hidden="true">⤢</span>
+              <span class="case__hint">открыть кадр</span>
+            </button>
+            <div class="case__body">
+              <div class="case__meta"><span class="tag tag--accent">Инструмент</span><span class="tag">Editor</span></div>
+              <h3>Level Builder</h3>
+              <p>Редакторский инструмент: тайловая кисть, проверка навигации и быстрый предпросмотр уровня прямо в инспекторе.</p>
+              <div class="case__tags"><span>Editor API</span><span>Odin</span><span>C#</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTS ===== -->
+    <section class="section cta" id="contacts">
+      <div class="container cta__inner reveal">
+        <span class="eyebrow">04 / Контакты</span>
+        <h2>Есть проект или идея?<br><span class="gradient-text">Давайте поговорим.</span></h2>
+        <p>Напиши в Telegram или на почту — отвечу в течение дня и обсужу детали.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:hello@example.com">hello@example.com</a>
+          <button class="btn btn--ghost" type="button" id="copyEmail" data-email="hello@example.com">Скопировать почту</button>
+        </div>
+        <div class="socials socials--center">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> Иван Петров · Unity Developer</span>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <!-- ===== МОДАЛКА ДЛЯ ГИФОК/КАДРОВ ===== -->
+  <div class="modal" id="mediaModal" role="dialog" aria-modal="true" aria-label="Просмотр медиа" hidden>
+    <button class="modal__close" type="button" id="modalClose" aria-label="Закрыть">×</button>
+    <figure class="modal__figure">
+      <img id="modalImage" alt="">
+      <figcaption id="modalCaption"></figcaption>
+    </figure>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Заглушка кейса Level Builder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d2a2a"/><stop offset="1" stop-color="#080d12"/></linearGradient>
+    <radialGradient id="g" cx="72%" cy="35%" r="55%"><stop offset="0" stop-color="#4fd1e5" stop-opacity=".22"/><stop offset="1" stop-color="#4fd1e5" stop-opacity="0"/></radialGradient>
+    <pattern id="tiles" width="56" height="56" patternUnits="userSpaceOnUse">
+      <rect width="56" height="56" fill="#122028" stroke="#4fd1e5" stroke-opacity=".16"/>
+      <rect x="2" y="2" width="52" height="52" fill="none" stroke="#ffffff" stroke-opacity=".03"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <ellipse cx="830" cy="260" rx="420" ry="280" fill="url(#g)"/>
+
+  <!-- окно редактора -->
+  <g transform="translate(520 130)">
+    <rect width="560" height="420" rx="18" fill="#0c141b" fill-opacity=".92" stroke="#ffffff" stroke-opacity=".16"/>
+    <rect width="560" height="42" rx="18" fill="#101a23"/>
+    <rect y="24" width="560" height="18" fill="#101a23"/>
+    <circle cx="22" cy="21" r="5" fill="#ff6b6b"/><circle cx="40" cy="21" r="5" fill="#ffd166"/><circle cx="58" cy="21" r="5" fill="#b6ff3c"/>
+    <text x="82" y="26" font-family="monospace" font-size="13" fill="#7e93a8">LevelBuilder.unity</text>
+
+    <!-- панель инструментов -->
+    <rect x="16" y="60" width="52" height="340" rx="10" fill="#111c25" stroke="#ffffff" stroke-opacity=".08"/>
+    <g fill="#4fd1e5" opacity=".85">
+      <rect x="30" y="78" width="24" height="24" rx="5"/><rect x="30" y="114" width="24" height="24" rx="5" opacity=".5"/>
+      <rect x="30" y="150" width="24" height="24" rx="5" opacity=".5"/><rect x="30" y="186" width="24" height="24" rx="5" opacity=".5"/>
+    </g>
+
+    <!-- тайлы -->
+    <rect x="82" y="60" width="462" height="280" fill="url(#tiles)"/>
+    <g fill="#b6ff3c" opacity=".75">
+      <rect x="138" y="116" width="56" height="56"/><rect x="194" y="116" width="56" height="56" opacity=".45"/>
+      <rect x="250" y="172" width="56" height="56" opacity=".6"/><rect x="306" y="228" width="56" height="56" opacity=".35"/>
+    </g>
+    <rect x="138" y="116" width="56" height="56" fill="none" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- инспектор -->
+    <rect x="82" y="352" width="462" height="48" rx="8" fill="#111c25" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="98" y="381" font-family="monospace" font-size="13" fill="#9fb0c4">Tile: Grass_02  ·  NavMesh: OK  ·  Snap: ON</text>
+  </g>
+
+  <g font-family="monospace" fill="#dff7fa">
+    <text x="46" y="62" font-size="15" letter-spacing="3" opacity=".7">CASE 04 / EDITOR TOOL</text>
+    <text x="46" y="130" font-size="52" font-weight="bold" letter-spacing="-1">LEVEL BUILDER</text>
+    <text x="46" y="162" font-size="15" fill="#6fdceb">C# EDITOR API · ODIN · WORKFLOW</text>
+  </g>
+  <g transform="translate(46 570)">
+    <rect width="220" height="40" rx="9" fill="#0d141c" fill-opacity=".8" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="16" y="26" font-family="monospace" font-size="14" fill="#9fb0c4">ЗАГЛУШКА · замени на PNG</text>
+  </g>
+</svg>
