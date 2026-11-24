@@ -220,16 +220,6 @@ code {
 }
 .btn--ghost:hover { background: var(--surface-strong); border-color: var(--border-hover); }
 
-.text-link {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--accent);
-  border-bottom: 1px solid rgba(182, 255, 60, .35);
-  padding-bottom: 4px;
-  transition: border-color .2s ease;
-}
-.text-link:hover { border-color: var(--accent); }
-
 /* ---------- Hero ---------- */
 .hero { padding: 72px 0 0; position: relative; }
 
@@ -414,13 +404,6 @@ code {
 .section { padding: 120px 0; position: relative; }
 
 .section-head { max-width: 640px; margin-bottom: 54px; }
-.section-head--row {
-  max-width: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 30px;
-}
 
 .eyebrow {
   display: block;
@@ -796,7 +779,6 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .float-chip--two { right: -2%; }
   .stats { grid-template-columns: repeat(2, 1fr); margin-top: 56px; }
   .stat { padding: 20px 18px; }
-  .section-head--row { flex-direction: column; align-items: flex-start; }
   .stack-grid, .cases-grid { grid-template-columns: 1fr; }
   .cases-grid .case:last-child { grid-column: auto; }
   .about-card, .timeline { padding: 24px; }

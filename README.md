@@ -15,9 +15,9 @@
 | `#about` | Опыт, даты и компании в `.timeline` |
 | `#about` → `.stack-block` | Свой стек (блок теперь внутри «О себе») |
 | `#cases` | Названия кейсов, описания, метрики, теги |
-| `#contacts`, footer | Telegram, GitHub, LinkedIn, год |
+| `#contacts`, footer | Telegram, LinkedIn, год |
 
-Telegram (`https://t.me/VolumeBlez_aka_Fail33`) и LinkedIn (`https://www.linkedin.com/in/dan-chinicalov/`) уже вставлены. Заглушкой остаётся только `https://github.com/` — замени, когда будет ссылка на свой GitHub.
+Telegram (`https://t.me/VolumeBlez_aka_Fail33`) и LinkedIn (`https://www.linkedin.com/in/dan-chinicalov/`) уже вставлены. Ссылок на GitHub на сайте нет.
 
 ### Картинки и гифки
 
