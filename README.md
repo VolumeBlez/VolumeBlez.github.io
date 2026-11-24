@@ -15,9 +15,9 @@
 | `#about` | Опыт, даты и компании в `.timeline` |
 | `#about` → `.stack-block` | Свой стек (блок теперь внутри «О себе») |
 | `#cases` | Названия кейсов, описания, метрики, теги |
-| `#contacts`, footer | Почта, Telegram, GitHub, LinkedIn, год |
+| `#contacts`, footer | Telegram, GitHub, LinkedIn, год |
 
-Все ссылки вида `https://github.com/`, `https://t.me/`, `mailto:hello@example.com` — заглушки.
+Telegram (`https://t.me/VolumeBlez_aka_Fail33`) и LinkedIn (`https://www.linkedin.com/in/dan-chinicalov/`) уже вставлены. Заглушкой остаётся только `https://github.com/` — замени, когда будет ссылка на свой GitHub.
 
 ### Картинки и гифки
 

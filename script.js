@@ -144,42 +144,6 @@
     closeMenu();
   });
 
-  /* ---------- Копирование почты ---------- */
-  const copyButton = document.getElementById('copyEmail');
-  const toast = document.getElementById('toast');
-  let toastTimer;
-
-  function showToast(message) {
-    toast.textContent = message;
-    toast.classList.add('is-visible');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2400);
-  }
-
-  async function copyText(text) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return true;
-    } catch (error) {
-      const input = document.createElement('textarea');
-      input.value = text;
-      input.style.position = 'fixed';
-      input.style.opacity = '0';
-      document.body.appendChild(input);
-      input.select();
-      const ok = document.execCommand('copy');
-      input.remove();
-      return ok;
-    }
-  }
-
-  if (copyButton) {
-    copyButton.addEventListener('click', async () => {
-      const ok = await copyText(copyButton.dataset.email);
-      showToast(ok ? 'Почта скопирована ✓' : 'Не получилось скопировать — выдели почту вручную');
-    });
-  }
-
   /* ---------- Год в футере ---------- */
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();

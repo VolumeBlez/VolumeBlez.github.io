@@ -695,7 +695,7 @@ code {
 }
 .footer a:hover { color: var(--accent); }
 
-/* ---------- Модалка и тост ---------- */
+/* ---------- Модалка ---------- */
 .modal {
   position: fixed;
   inset: 0;
@@ -739,23 +739,6 @@ code {
   transition: background .2s ease, transform .2s ease;
 }
 .modal__close:hover { background: var(--surface-strong); transform: rotate(90deg); }
-
-.toast {
-  position: fixed;
-  bottom: 30px; left: 50%;
-  transform: translate(-50%, 20px);
-  z-index: 110;
-  padding: 12px 20px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: #121821;
-  box-shadow: 0 12px 40px rgba(0,0,0,.5);
-  font-size: 13px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease, transform .25s var(--ease);
-}
-.toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
 /* ---------- Появление при скролле ---------- */
 html.js .reveal {
