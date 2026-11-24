@@ -708,19 +708,15 @@ code {
   padding: 4px 8px;
 }
 
-.case--featured {
+/* Каждый кейс — отдельная строка на всю ширину */
+.case--row {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
-.case--featured .case__body { padding: 40px 38px; display: flex; flex-direction: column; justify-content: center; }
-.case--featured h3 { font-size: 34px; }
-
-.cases-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
+.case--row:last-child { margin-bottom: 0; }
+.case--row .case__body { padding: 40px 38px; display: flex; flex-direction: column; justify-content: center; }
+.case--row h3 { font-size: 34px; }
 
 /* ---------- CTA / Footer ---------- */
 .cta {
@@ -811,9 +807,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .hero__title { max-width: 760px; }
   .about-grid { grid-template-columns: 1fr; }
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
-  .case--featured { grid-template-columns: 1fr; }
-  .cases-grid { grid-template-columns: repeat(2, 1fr); }
-  .cases-grid .case:last-child { grid-column: 1 / -1; }
+  .case--row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
@@ -851,14 +845,13 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .float-chip--two { right: -2%; }
   .stats { grid-template-columns: repeat(2, 1fr); margin-top: 56px; }
   .stat { padding: 20px 18px; }
-  .stack-grid, .cases-grid { grid-template-columns: 1fr; }
-  .cases-grid .case:last-child { grid-column: auto; }
+  .stack-grid { grid-template-columns: 1fr; }
   .about-card, .timeline { padding: 24px; }
   .stack-block { margin-top: 44px; padding-top: 38px; }
   .timeline::before { left: 19px; }
   .timeline__item::before { left: -19px; }
-  .case--featured .case__body { padding: 26px 22px; }
-  .case--featured h3 { font-size: 28px; }
+  .case--row .case__body { padding: 26px 22px; }
+  .case--row h3 { font-size: 28px; }
   .case__body { padding: 22px; }
   .gallery__arrow { width: 34px; height: 34px; font-size: 22px; opacity: .9; }
   .gallery__arrow--prev { left: 8px; }

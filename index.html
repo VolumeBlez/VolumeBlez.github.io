@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
-  <script src="script.js?v=4" defer></script>
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script src="script.js?v=5" defer></script>
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -189,7 +189,7 @@
         </div>
 
         <!-- TODO: замени заголовки, описания, метрики и картинки (assets/*.svg -> *.gif/*.png) -->
-        <article class="case case--featured reveal">
+        <article class="case case--row reveal">
           <div class="case__gallery" data-gallery aria-label="Галерея кадров Naughty Arena">
             <button class="case__media" type="button" data-gallery-open data-media="assets/case_1.png" data-media-poster="assets/case_1.png" data-caption="Naughty Arena — кадр 1 из 4">
               <img class="gallery__current" src="assets/case_1.png" alt="Кадр 1 из игры Naughty Arena" loading="lazy" width="460" height="215">
@@ -222,9 +222,8 @@
           </div>
         </article>
 
-        <div class="cases-grid">
-          <article class="case reveal">
-            <div class="case__gallery" data-gallery aria-label="Галерея War Legends">
+        <article class="case case--row reveal">
+          <div class="case__gallery" data-gallery aria-label="Галерея War Legends">
               <button class="case__media" type="button" data-gallery-open data-media="assets/case_2_video.mp4" data-media-poster="assets/case_2_1.webp" data-media-type="video" data-caption="War Legends — видео">
                 <img class="gallery__current" src="assets/case_2_1.webp" alt="Кадр из War Legends" loading="lazy" width="1920" height="1080">
                 <video class="gallery__video" src="assets/case_2_video.mp4" poster="assets/case_2_1.webp" muted loop playsinline preload="metadata" hidden></video>
@@ -257,8 +256,8 @@
             </div>
           </article>
 
-          <article class="case reveal" data-delay="80">
-            <button class="case__media" type="button" data-media="assets/case-3.svg" data-media-poster="assets/case-3.svg" data-caption="Dungeon Crawler — геймплей (заглушка)">
+        <article class="case case--row reveal" data-delay="80">
+          <button class="case__media" type="button" data-media="assets/case-3.svg" data-media-poster="assets/case-3.svg" data-caption="Dungeon Crawler — геймплей (заглушка)">
               <img src="assets/case-3.svg" alt="Кадр проекта Dungeon Crawler — заглушка" loading="lazy" width="1200" height="675">
               <span class="case__play" aria-hidden="true">▶</span>
               <span class="case__hint">смотреть процесс</span>
@@ -271,8 +270,8 @@
             </div>
           </article>
 
-          <article class="case reveal" data-delay="160">
-            <button class="case__media" type="button" data-media="assets/case-4.svg" data-media-poster="assets/case-4.svg" data-caption="Level Builder — редактор уровней (заглушка)">
+        <article class="case case--row reveal" data-delay="160">
+          <button class="case__media" type="button" data-media="assets/case-4.svg" data-media-poster="assets/case-4.svg" data-caption="Level Builder — редактор уровней (заглушка)">
               <img src="assets/case-4.svg" alt="Скриншот инструмента Level Builder — заглушка" loading="lazy" width="1200" height="675">
               <span class="case__play case__play--image" aria-hidden="true">⤢</span>
               <span class="case__hint">открыть кадр</span>
@@ -283,8 +282,7 @@
               <p>Редакторский инструмент: тайловая кисть, проверка навигации и быстрый предпросмотр уровня прямо в инспекторе.</p>
               <div class="case__tags"><span>Editor API</span><span>Odin</span><span>C#</span></div>
             </div>
-          </article>
-        </div>
+        </article>
       </div>
     </section>
 
