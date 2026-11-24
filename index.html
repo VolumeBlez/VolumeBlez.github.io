@@ -32,7 +32,6 @@
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
         <a href="#about">О себе</a>
-        <a href="#stack">Стек</a>
         <a href="#cases">Кейсы</a>
         <a href="#contacts">Контакты</a>
       </nav>
@@ -104,13 +103,13 @@
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== О СЕБЕ + СТЕК ===== -->
     <section class="section" id="about">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">01 / О себе</span>
-          <h2>Коротко и по делу</h2>
-          <p class="section-lead">От первых прототипов до проектов, которые уходят в релиз. Вот как это выглядело.</p>
+          <span class="eyebrow">01 / О себе и стек</span>
+          <h2>Кто я и чем работаю</h2>
+          <p class="section-lead">Коротко об опыте и инструментах, с которыми собрал проекты ниже.</p>
         </div>
 
         <div class="about-grid">
@@ -150,35 +149,33 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== STACK ===== -->
-    <section class="section section--alt" id="stack">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">02 / Инструменты</span>
-          <h2>Стек, с которым работаю</h2>
-          <p class="section-lead">Не просто список названий — то, что реально использовал в боях.</p>
-        </div>
+        <!-- Стек внутри блока "О себе" -->
+        <div class="stack-block reveal" id="stack">
+          <div class="stack-block__head">
+            <span class="eyebrow">Стек</span>
+            <h3>Инструменты, с которыми работаю</h3>
+            <p>Не просто список названий — то, что реально использовал в боях.</p>
+          </div>
 
-        <!-- TODO: поправь список под свой реальный стек -->
-        <div class="stack-grid">
-          <div class="stack-col reveal">
-            <h3><span class="stack-col__icon">◆</span> Основы</h3>
-            <ul><li>Unity 2021 / 2022 / 6</li><li>C# / .NET</li><li>OOP, SOLID</li><li>Unity Test Framework</li></ul>
-          </div>
-          <div class="stack-col reveal" data-delay="60">
-            <h3><span class="stack-col__icon">◆</span> Геймплей</h3>
-            <ul><li>Cinemachine</li><li>DOTween</li><li>NavMesh / AI</li><li>Physics / Rigidbody</li></ul>
-          </div>
-          <div class="stack-col reveal" data-delay="120">
-            <h3><span class="stack-col__icon">◆</span> Графика</h3>
-            <ul><li>URP / HDRP</li><li>Shader Graph</li><li>VFX Graph</li><li>Post Processing</li></ul>
-          </div>
-          <div class="stack-col reveal" data-delay="180">
-            <h3><span class="stack-col__icon">◆</span> Процесс</h3>
-            <ul><li>Git / GitHub</li><li>Addressables</li><li>Odin Inspector</li><li>REST API / Firebase</li></ul>
+          <!-- TODO: поправь список под свой реальный стек -->
+          <div class="stack-grid">
+            <div class="stack-col reveal">
+              <h3><span class="stack-col__icon">◆</span> Основы</h3>
+              <ul><li>Unity 2021 / 2022 / 6</li><li>C# / .NET</li><li>OOP, SOLID</li><li>Unity Test Framework</li></ul>
+            </div>
+            <div class="stack-col reveal" data-delay="60">
+              <h3><span class="stack-col__icon">◆</span> Геймплей</h3>
+              <ul><li>Cinemachine</li><li>DOTween</li><li>NavMesh / AI</li><li>Physics / Rigidbody</li></ul>
+            </div>
+            <div class="stack-col reveal" data-delay="120">
+              <h3><span class="stack-col__icon">◆</span> Графика</h3>
+              <ul><li>URP / HDRP</li><li>Shader Graph</li><li>VFX Graph</li><li>Post Processing</li></ul>
+            </div>
+            <div class="stack-col reveal" data-delay="180">
+              <h3><span class="stack-col__icon">◆</span> Процесс</h3>
+              <ul><li>Git / GitHub</li><li>Addressables</li><li>Odin Inspector</li><li>REST API / Firebase</li></ul>
+            </div>
           </div>
         </div>
       </div>
@@ -189,7 +186,7 @@
       <div class="container">
         <div class="section-head section-head--row reveal">
           <div>
-            <span class="eyebrow">03 / Кейсы</span>
+            <span class="eyebrow">02 / Кейсы</span>
             <h2>Что я делал</h2>
             <p class="section-lead">Гифки и кадры — заглушки. Замени их на свои файлы из папки <code>assets/</code>.</p>
           </div>
@@ -264,7 +261,7 @@
     <!-- ===== CONTACTS ===== -->
     <section class="section cta" id="contacts">
       <div class="container cta__inner reveal">
-        <span class="eyebrow">04 / Контакты</span>
+        <span class="eyebrow">03 / Контакты</span>
         <h2>Есть проект или идея?<br><span class="gradient-text">Давайте поговорим.</span></h2>
         <p>Напиши в Telegram или на почту — отвечу в течение дня и обсужу детали.</p>
         <div class="cta__actions">

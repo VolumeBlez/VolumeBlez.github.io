@@ -412,10 +412,6 @@ code {
 
 /* ---------- Секции ---------- */
 .section { padding: 120px 0; position: relative; }
-.section--alt {
-  background: linear-gradient(180deg, transparent, rgba(255,255,255,.018) 20%, rgba(255,255,255,.018) 80%, transparent);
-  border-block: 1px solid rgba(255,255,255,.045);
-}
 
 .section-head { max-width: 640px; margin-bottom: 54px; }
 .section-head--row {
@@ -500,7 +496,22 @@ code {
 .timeline h3 { font-size: 16px; margin: 6px 0 4px; }
 .timeline p { font-size: 14px; color: var(--muted); margin: 0; }
 
-/* Стек */
+/* Стек (внутри секции "О себе") */
+.stack-block {
+  margin-top: 58px;
+  padding-top: 50px;
+  border-top: 1px solid var(--border);
+}
+.stack-block__head { max-width: 640px; margin-bottom: 32px; }
+.stack-block__head .eyebrow { margin-bottom: 10px; }
+.stack-block__head h3 {
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  margin-bottom: 8px;
+}
+.stack-block__head p { color: var(--muted); margin: 0; }
+
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -806,6 +817,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .stack-grid, .cases-grid { grid-template-columns: 1fr; }
   .cases-grid .case:last-child { grid-column: auto; }
   .about-card, .timeline { padding: 24px; }
+  .stack-block { margin-top: 44px; padding-top: 38px; }
   .timeline::before { left: 19px; }
   .timeline__item::before { left: -19px; }
   .case--featured .case__body { padding: 26px 22px; }
