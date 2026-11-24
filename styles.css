@@ -24,6 +24,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 html {
   scroll-behavior: smooth;
@@ -599,6 +600,60 @@ code {
 }
 .case:hover .case__hint, .case__media:focus-visible .case__hint { opacity: 1; }
 
+/* Галерея кадров */
+.case__gallery { position: relative; }
+
+.gallery__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 40px; height: 40px;
+  display: grid;
+  place-items: center;
+  padding: 0 0 3px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(8, 11, 16, .62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: .65;
+  transform: translateY(-50%);
+  transition: opacity .2s ease, background .2s ease, transform .25s var(--ease), border-color .2s ease;
+}
+.gallery__arrow:hover {
+  opacity: 1;
+  background: rgba(8, 11, 16, .92);
+  border-color: var(--border-hover);
+}
+.gallery__arrow--prev { left: 14px; }
+.gallery__arrow--next { right: 14px; }
+.gallery__arrow--prev:hover { transform: translate(-3px, -50%); }
+.gallery__arrow--next:hover { transform: translate(3px, -50%); }
+
+.gallery__dots {
+  position: absolute;
+  left: 50%; bottom: 14px;
+  z-index: 3;
+  display: flex;
+  gap: 6px;
+  transform: translateX(-50%);
+}
+.gallery__dot {
+  width: 7px; height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  transition: width .25s var(--ease), background .2s ease;
+}
+.gallery__dot.is-active { width: 20px; background: var(--accent); }
+.gallery__dot:hover { background: #fff; }
+
 .case__body { padding: 26px 28px 30px; }
 .case__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .tag {
@@ -788,6 +843,10 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .case--featured .case__body { padding: 26px 22px; }
   .case--featured h3 { font-size: 28px; }
   .case__body { padding: 22px; }
+  .gallery__arrow { width: 34px; height: 34px; font-size: 22px; opacity: .9; }
+  .gallery__arrow--prev { left: 8px; }
+  .gallery__arrow--next { right: 8px; }
+  .gallery__dots { bottom: 10px; }
   .cta__actions { flex-direction: column; }
   .cta__actions .btn { width: 100%; }
   .footer__inner { flex-direction: column; text-align: center; }

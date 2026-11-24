@@ -190,16 +190,33 @@
 
         <!-- TODO: замени заголовки, описания, метрики и картинки (assets/*.svg -> *.gif/*.png) -->
         <article class="case case--featured reveal">
-          <button class="case__media" type="button" data-media="assets/case_1.png" data-media-poster="assets/case_1.png" data-caption="Naughty Arena — кадр из игры">
-            <img src="assets/case_1.png" alt="Кадр из игры Naughty Arena" loading="lazy" width="460" height="215">
-            <span class="case__play case__play--image" aria-hidden="true">⤢</span>
-            <span class="case__hint">открыть кадр</span>
-          </button>
+          <div class="case__gallery" data-gallery aria-label="Галерея кадров Naughty Arena">
+            <button class="case__media" type="button" data-gallery-open data-media="assets/case_1.png" data-media-poster="assets/case_1.png" data-caption="Naughty Arena — кадр 1 из 4">
+              <img class="gallery__current" src="assets/case_1.png" alt="Кадр 1 из игры Naughty Arena" loading="lazy" width="460" height="215">
+              <span class="case__play case__play--image" aria-hidden="true">⤢</span>
+              <span class="case__hint">открыть кадр</span>
+            </button>
+
+            <!-- Кадры галереи: добавь новую строку <img ...>, чтобы появилась следующая картинка -->
+            <img data-gallery-item src="assets/case_1.png" alt="Кадр 1 из игры Naughty Arena" hidden>
+            <img data-gallery-item src="assets/case_1_1.jpg" alt="Кадр 2 из игры Naughty Arena" hidden>
+            <img data-gallery-item src="assets/case_1_2.jpg" alt="Кадр 3 из игры Naughty Arena" hidden>
+            <img data-gallery-item src="assets/case_1_3.jpg" alt="Кадр 4 из игры Naughty Arena" hidden>
+
+            <button class="gallery__arrow gallery__arrow--prev" type="button" data-gallery-prev aria-label="Предыдущий кадр">‹</button>
+            <button class="gallery__arrow gallery__arrow--next" type="button" data-gallery-next aria-label="Следующий кадр">›</button>
+            <div class="gallery__dots" aria-label="Выбрать кадр">
+              <button class="gallery__dot is-active" type="button" data-gallery-dot="0" aria-label="Кадр 1" aria-current="true"></button>
+              <button class="gallery__dot" type="button" data-gallery-dot="1" aria-label="Кадр 2"></button>
+              <button class="gallery__dot" type="button" data-gallery-dot="2" aria-label="Кадр 3"></button>
+              <button class="gallery__dot" type="button" data-gallery-dot="3" aria-label="Кадр 4"></button>
+            </div>
+          </div>
           <div class="case__body">
             <div class="case__meta"><span class="tag tag--accent">Проект</span><span class="tag">Steam · PC</span></div>
             <h3>Naughty Arena</h3>
             <p>Naughty Arena — это пошаговая ролевая игра в жанре файтинга, пропитанная неприкрытой похотью.</p>
-            <div class="case__tags"><span>UI</span><span>Addressables</span><span>DOTween</span><span>Zenject</span><span>URP</span></div>
+            <div class="case__tags"><span>UI</span><span>Addressables</span><span>DOTween</span><span>Zenject</span><span>URP</span><span>NSFW</span></div>
           </div>
         </article>
 

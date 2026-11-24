@@ -96,6 +96,57 @@
     rotator.style.transition = 'opacity .22s ease';
   }
 
+  /* ---------- Галерея кадров в кейсе ---------- */
+  document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+    const items = Array.from(gallery.querySelectorAll('[data-gallery-item]'));
+    const current = gallery.querySelector('.gallery__current');
+    const openButton = gallery.querySelector('[data-gallery-open]');
+    const prev = gallery.querySelector('[data-gallery-prev]');
+    const next = gallery.querySelector('[data-gallery-next]');
+    const dots = Array.from(gallery.querySelectorAll('[data-gallery-dot]'));
+    if (!items.length || !current || !openButton) return;
+
+    if (items.length < 2) {
+      [prev, next, ...dots].forEach((el) => { if (el) el.hidden = true; });
+      return;
+    }
+
+    const title = gallery.closest('.case')?.querySelector('h3')?.textContent.trim() || 'Кадр';
+    let index = 0;
+
+    function render() {
+      const item = items[index];
+      const src = item.getAttribute('src');
+      current.src = src;
+      current.alt = item.getAttribute('alt') || '';
+      openButton.dataset.media = src;
+      openButton.dataset.mediaPoster = src;
+      openButton.dataset.caption = `${title} — кадр ${index + 1} из ${items.length}`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === index);
+        if (i === index) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    }
+
+    function go(step) {
+      index = (index + step + items.length) % items.length;
+      render();
+    }
+
+    if (prev) prev.addEventListener('click', () => go(-1));
+    if (next) next.addEventListener('click', () => go(1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { index = i; render(); }));
+
+    gallery.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); go(-1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); go(1); }
+    });
+
+    render();
+  });
+
   /* ---------- Модалка с гифками/картинками ---------- */
   const modal = document.getElementById('mediaModal');
   const modalImage = document.getElementById('modalImage');
