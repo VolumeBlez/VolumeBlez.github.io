@@ -100,14 +100,23 @@
   document.querySelectorAll('[data-gallery]').forEach((gallery) => {
     const source = gallery.querySelector('[data-gallery-source]');
     const items = source
-      ? Array.from(source.content.querySelectorAll('img'))
+      ? Array.from(source.content.querySelectorAll('img, video'))
       : Array.from(gallery.querySelectorAll('[data-gallery-item]'));
     const current = gallery.querySelector('.gallery__current');
+    const currentVideo = gallery.querySelector('.gallery__video');
     const openButton = gallery.querySelector('[data-gallery-open]');
     const prev = gallery.querySelector('[data-gallery-prev]');
     const next = gallery.querySelector('[data-gallery-next]');
     const dots = Array.from(gallery.querySelectorAll('[data-gallery-dot]'));
     if (!items.length || !current || !openButton) return;
+
+    // Грузим картинки заранее, чтобы стрелки не ждали загрузку
+    items.forEach((item) => {
+      if (item.tagName === 'IMG') {
+        const preloader = new Image();
+        preloader.src = item.getAttribute('src');
+      }
+    });
 
     if (items.length < 2) {
       [prev, next, ...dots].forEach((el) => { if (el) el.hidden = true; });
@@ -120,11 +129,33 @@
     function render() {
       const item = items[index];
       const src = item.getAttribute('src');
-      current.src = src;
-      current.alt = item.getAttribute('alt') || '';
+      const isVideo = item.tagName === 'VIDEO';
+
+      if (isVideo) {
+        current.hidden = true;
+        if (currentVideo) {
+          currentVideo.hidden = false;
+          if (currentVideo.getAttribute('src') !== src) currentVideo.src = src;
+          currentVideo.poster = item.getAttribute('poster') || '';
+          currentVideo.play().catch(() => {});
+        }
+      } else {
+        if (currentVideo) {
+          currentVideo.pause();
+          currentVideo.currentTime = 0;
+          currentVideo.hidden = true;
+        }
+        current.hidden = false;
+        current.src = src;
+        current.alt = item.getAttribute('alt') || '';
+      }
+
       openButton.dataset.media = src;
-      openButton.dataset.mediaPoster = src;
-      openButton.dataset.caption = `${title} — кадр ${index + 1} из ${items.length}`;
+      openButton.dataset.mediaPoster = isVideo ? (item.getAttribute('poster') || '') : src;
+      openButton.dataset.mediaType = isVideo ? 'video' : 'image';
+      openButton.dataset.caption = isVideo
+        ? `${title} — видео`
+        : `${title} — кадр ${index + 1} из ${items.length}`;
 
       dots.forEach((dot, i) => {
         dot.classList.toggle('is-active', i === index);
@@ -153,6 +184,7 @@
   /* ---------- Модалка с гифками/картинками ---------- */
   const modal = document.getElementById('mediaModal');
   const modalImage = document.getElementById('modalImage');
+  const modalVideo = document.getElementById('modalVideo');
   const modalCaption = document.getElementById('modalCaption');
   const modalClose = document.getElementById('modalClose');
   let lastFocused = null;
@@ -163,15 +195,30 @@
     document.body.classList.add('modal-open');
 
     modalCaption.textContent = button.dataset.caption || '';
-    modalImage.alt = button.querySelector('img')?.alt || '';
+    const media = button.dataset.media || '';
+    const poster = button.dataset.mediaPoster || '';
+    const isVideo = button.dataset.mediaType === 'video' || /\.(mp4|webm|ogg)$/i.test(media);
 
-    let usingFallback = false;
-    modalImage.onerror = () => {
-      if (usingFallback) return;
-      usingFallback = true;
-      modalImage.src = button.dataset.mediaPoster || '';
-    };
-    modalImage.src = button.dataset.media || '';
+    modalImage.hidden = isVideo;
+    modalVideo.hidden = !isVideo;
+
+    if (isVideo) {
+      modalVideo.poster = poster;
+      modalVideo.src = media;
+      modalVideo.play().catch(() => {});
+    } else {
+      modalVideo.pause();
+      modalVideo.removeAttribute('src');
+      modalImage.alt = button.querySelector('img')?.alt || '';
+
+      let usingFallback = false;
+      modalImage.onerror = () => {
+        if (usingFallback) return;
+        usingFallback = true;
+        modalImage.src = poster;
+      };
+      modalImage.src = media;
+    }
     modalClose.focus();
   }
 
@@ -179,6 +226,8 @@
     if (modal.hidden) return;
     modal.hidden = true;
     document.body.classList.remove('modal-open');
+    modalVideo.pause();
+    modalVideo.removeAttribute('src');
     modalImage.removeAttribute('src');
     if (lastFocused) lastFocused.focus();
   }

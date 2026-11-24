@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
-  <script src="script.js?v=3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script src="script.js?v=4" defer></script>
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -224,16 +224,36 @@
 
         <div class="cases-grid">
           <article class="case reveal">
-            <button class="case__media" type="button" data-media="assets/case-2.svg" data-media-poster="assets/case-2.svg" data-caption="Steel Frontier — интерактивная кампания (заглушка)">
-              <img src="assets/case-2.svg" alt="Кадр кампании Steel Frontier — заглушка" loading="lazy" width="1200" height="675">
-              <span class="case__play" aria-hidden="true">▶</span>
-              <span class="case__hint">смотреть процесс</span>
-            </button>
+            <div class="case__gallery" data-gallery aria-label="Галерея War Legends">
+              <button class="case__media" type="button" data-gallery-open data-media="assets/case_2_video.mp4" data-media-poster="assets/case_2_1.webp" data-media-type="video" data-caption="War Legends — видео">
+                <img class="gallery__current" src="assets/case_2_1.webp" alt="Кадр из War Legends" loading="lazy" width="1920" height="1080">
+                <video class="gallery__video" src="assets/case_2_video.mp4" poster="assets/case_2_1.webp" muted loop playsinline preload="metadata" hidden></video>
+                <span class="case__play case__play--image" aria-hidden="true">⤢</span>
+                <span class="case__hint">открыть</span>
+              </button>
+
+              <!-- Первый слайд — видео, дальше кадры. Добавляй новые строки <img>/<video>. -->
+              <template data-gallery-source>
+                <video src="assets/case_2_video.mp4" poster="assets/case_2_1.webp" muted loop playsinline preload="metadata" aria-label="Видео из War Legends"></video>
+                <img src="assets/case_2_1.webp" alt="Кадр 1 из War Legends">
+                <img src="assets/case_2_2.webp" alt="Кадр 2 из War Legends">
+                <img src="assets/case_2_3.webp" alt="Кадр 3 из War Legends">
+              </template>
+
+              <button class="gallery__arrow gallery__arrow--prev" type="button" data-gallery-prev aria-label="Предыдущий слайд">‹</button>
+              <button class="gallery__arrow gallery__arrow--next" type="button" data-gallery-next aria-label="Следующий слайд">›</button>
+              <div class="gallery__dots" aria-label="Выбрать слайд">
+                <button class="gallery__dot is-active" type="button" data-gallery-dot="0" aria-label="Видео" aria-current="true"></button>
+                <button class="gallery__dot" type="button" data-gallery-dot="1" aria-label="Кадр 1"></button>
+                <button class="gallery__dot" type="button" data-gallery-dot="2" aria-label="Кадр 2"></button>
+                <button class="gallery__dot" type="button" data-gallery-dot="3" aria-label="Кадр 3"></button>
+              </div>
+            </div>
             <div class="case__body">
-              <div class="case__meta"><span class="tag tag--accent">Кампания</span><span class="tag">WebGL</span></div>
-              <h3>Steel Frontier</h3>
-              <p>Интерактивная промо-кампания в браузере: мини-игра, сбор метрик и адаптация под мобильные экраны.</p>
-              <div class="case__tags"><span>Unity WebGL</span><span>UI</span><span>GSAP-подобные анимации</span></div>
+              <div class="case__meta"><span class="tag tag--accent">Проект</span><span class="tag">Android · RTS</span></div>
+              <h3>War Legends</h3>
+              <p>War Legends — настоящая классическая стратегия в реальном времени, действие которой разворачивается в фэнтезийном мире орков и людей, эльфов и гномов, гоблинов и нежити, а также эпических героев и магических заклинаний.</p>
+              <div class="case__tags"><span>3D</span><span>UniRx</span><span>Unity Physics</span><span>Cinemachine</span><span>VFX Graph</span></div>
             </div>
           </article>
 
@@ -298,6 +318,7 @@
     <button class="modal__close" type="button" id="modalClose" aria-label="Закрыть">×</button>
     <figure class="modal__figure">
       <img id="modalImage" alt="">
+      <video id="modalVideo" controls playsinline hidden></video>
       <figcaption id="modalCaption"></figcaption>
     </figure>
   </div>
