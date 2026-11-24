@@ -98,7 +98,10 @@
 
   /* ---------- Галерея кадров в кейсе ---------- */
   document.querySelectorAll('[data-gallery]').forEach((gallery) => {
-    const items = Array.from(gallery.querySelectorAll('[data-gallery-item]'));
+    const source = gallery.querySelector('[data-gallery-source]');
+    const items = source
+      ? Array.from(source.content.querySelectorAll('img'))
+      : Array.from(gallery.querySelectorAll('[data-gallery-item]'));
     const current = gallery.querySelector('.gallery__current');
     const openButton = gallery.querySelector('[data-gallery-open]');
     const prev = gallery.querySelector('[data-gallery-prev]');

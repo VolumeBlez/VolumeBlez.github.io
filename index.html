@@ -198,10 +198,12 @@
             </button>
 
             <!-- Кадры галереи: добавь новую строку <img ...>, чтобы появилась следующая картинка -->
-            <img data-gallery-item src="assets/case_1.png" alt="Кадр 1 из игры Naughty Arena" hidden>
-            <img data-gallery-item src="assets/case_1_1.jpg" alt="Кадр 2 из игры Naughty Arena" hidden>
-            <img data-gallery-item src="assets/case_1_2.jpg" alt="Кадр 3 из игры Naughty Arena" hidden>
-            <img data-gallery-item src="assets/case_1_3.jpg" alt="Кадр 4 из игры Naughty Arena" hidden>
+            <template data-gallery-source>
+              <img src="assets/case_1.png" alt="Кадр 1 из игры Naughty Arena">
+              <img src="assets/case_1_1.jpg" alt="Кадр 2 из игры Naughty Arena">
+              <img src="assets/case_1_2.jpg" alt="Кадр 3 из игры Naughty Arena">
+              <img src="assets/case_1_3.jpg" alt="Кадр 4 из игры Naughty Arena">
+            </template>
 
             <button class="gallery__arrow gallery__arrow--prev" type="button" data-gallery-prev aria-label="Предыдущий кадр">‹</button>
             <button class="gallery__arrow gallery__arrow--next" type="button" data-gallery-next aria-label="Следующий кадр">›</button>
