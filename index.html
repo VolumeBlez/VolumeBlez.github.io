@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
-  <script src="script.js?v=6" defer></script>
+  <link rel="stylesheet" href="styles.css?v=7">
+  <script src="script.js?v=7" defer></script>
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -224,17 +224,17 @@
 
         <article class="case case--row reveal">
           <div class="case__gallery" data-gallery aria-label="Галерея War Legends">
-              <button class="case__media" type="button" data-gallery-open data-media="assets/case_2_video.mp4" data-media-poster="assets/case_2_1.webp" data-media-type="video" data-caption="War Legends — видео">
+              <button class="case__media" type="button" data-gallery-open data-media="assets/case_2_1.webp" data-media-poster="assets/case_2_1.webp" data-caption="War Legends — кадр 1 из 4">
                 <img class="gallery__current" src="assets/case_2_1.webp" alt="Кадр из War Legends" loading="lazy" width="1920" height="1080">
                 <video class="gallery__video" src="assets/case_2_video.mp4" poster="assets/case_2_1.webp" muted loop playsinline preload="metadata" hidden></video>
                 <span class="case__play case__play--image" aria-hidden="true">⤢</span>
                 <span class="case__hint">открыть</span>
               </button>
 
-              <!-- Первый слайд — видео, дальше кадры. Добавляй новые строки <img>/<video>. -->
+              <!-- Сначала кадр, потом видео, потом остальные кадры. Добавляй новые строки <img>/<video>. -->
               <template data-gallery-source>
-                <video src="assets/case_2_video.mp4" poster="assets/case_2_1.webp" muted loop playsinline preload="metadata" aria-label="Видео из War Legends"></video>
                 <img src="assets/case_2_1.webp" alt="Кадр 1 из War Legends">
+                <video src="assets/case_2_video.mp4" poster="assets/case_2_1.webp" muted loop playsinline preload="metadata" aria-label="Видео из War Legends"></video>
                 <img src="assets/case_2_2.webp" alt="Кадр 2 из War Legends">
                 <img src="assets/case_2_3.webp" alt="Кадр 3 из War Legends">
               </template>
@@ -242,8 +242,8 @@
               <button class="gallery__arrow gallery__arrow--prev" type="button" data-gallery-prev aria-label="Предыдущий слайд">‹</button>
               <button class="gallery__arrow gallery__arrow--next" type="button" data-gallery-next aria-label="Следующий слайд">›</button>
               <div class="gallery__dots" aria-label="Выбрать слайд">
-                <button class="gallery__dot is-active" type="button" data-gallery-dot="0" aria-label="Видео" aria-current="true"></button>
-                <button class="gallery__dot" type="button" data-gallery-dot="1" aria-label="Кадр 1"></button>
+                <button class="gallery__dot is-active" type="button" data-gallery-dot="0" aria-label="Кадр 1" aria-current="true"></button>
+                <button class="gallery__dot" type="button" data-gallery-dot="1" aria-label="Видео"></button>
                 <button class="gallery__dot" type="button" data-gallery-dot="2" aria-label="Кадр 2"></button>
                 <button class="gallery__dot" type="button" data-gallery-dot="3" aria-label="Кадр 3"></button>
               </div>
