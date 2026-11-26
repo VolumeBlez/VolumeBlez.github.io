@@ -36,6 +36,14 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- Кнопка «Наверх» ---------- */
+  document.querySelectorAll('a[href="#top"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  });
+
   /* ---------- Мобильное меню ---------- */
   const menuToggle = document.getElementById('menuToggle');
   const nav = document.getElementById('nav');
