@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=24">
-  <script src="script.js?v=24" defer></script>
+  <link rel="stylesheet" href="styles.css?v=25">
+  <script src="script.js?v=25" defer></script>
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -27,7 +27,7 @@
     <div class="container header__inner">
       <a class="logo" href="#top" aria-label="Наверх">
         <span class="logo__mark">U</span>
-        <span class="logo__text">DANIL<span>.</span>DEV</span>
+        <span class="logo__text">VOLUMEBLEZ<span>.</span>DEV</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
@@ -187,6 +187,39 @@
 
         <!-- TODO: замени заголовки, описания, метрики и картинки (assets/*.svg -> *.gif/*.png) -->
         <article class="case case--row reveal">
+          <div class="case__gallery" data-gallery aria-label="Галерея Hunger">
+            <button class="case__media" type="button" data-gallery-open data-media="assets/case_4_0.png" data-media-poster="assets/case_4_0.png" data-caption="Hunger — кадр 1 из 4">
+              <img class="gallery__current" src="assets/case_4_0.png" alt="Кадр 1 из Hunger" loading="lazy" width="2559" height="1439">
+              <span class="case__play case__play--image" aria-hidden="true">⤢</span>
+              <span class="case__hint">открыть кадр</span>
+            </button>
+
+            <!-- Кадры галереи: добавь новую строку <img ...>, чтобы появилась следующая картинка -->
+            <template data-gallery-source>
+              <img src="assets/case_4_0.png" alt="Кадр 1 из Hunger">
+              <img src="assets/case_4_1.jpg" alt="Кадр 2 из Hunger">
+              <img src="assets/case_4_2.png" alt="Кадр 3 из Hunger">
+              <img src="assets/case_4_3.jpg" alt="Кадр 4 из Hunger">
+            </template>
+
+            <button class="gallery__arrow gallery__arrow--prev" type="button" data-gallery-prev aria-label="Предыдущий кадр">‹</button>
+            <button class="gallery__arrow gallery__arrow--next" type="button" data-gallery-next aria-label="Следующий кадр">›</button>
+            <div class="gallery__dots" aria-label="Выбрать кадр">
+              <button class="gallery__dot is-active" type="button" data-gallery-dot="0" aria-label="Кадр 1" aria-current="true"></button>
+              <button class="gallery__dot" type="button" data-gallery-dot="1" aria-label="Кадр 2"></button>
+              <button class="gallery__dot" type="button" data-gallery-dot="2" aria-label="Кадр 3"></button>
+              <button class="gallery__dot" type="button" data-gallery-dot="3" aria-label="Кадр 4"></button>
+            </div>
+          </div>
+          <div class="case__body">
+            <div class="case__meta"><span class="tag tag--accent">Проект</span><span class="tag">Steam · Survival horror</span></div>
+            <h3>Hunger</h3>
+            <p>Маленький сибирский городок отрезан от мира туманом. Людей почти не осталось: днём улицы заполняют чудовища из-под земли, ночью выжившие борются за ресурсы. Ты был обычным выжившим, пока не стал рабом огромного чудовища. Оно уже в твоём доме, требует еды и голодно…</p>
+            <div class="case__tags"><span>Addressables</span><span>Zenject</span><span>Localization</span><span>Timeline</span><span>URP</span></div>
+          </div>
+        </article>
+
+        <article class="case case--row reveal">
           <div class="case__gallery" data-gallery aria-label="Галерея кадров Naughty Arena">
             <button class="case__media" type="button" data-gallery-open data-media="assets/case_1.png" data-media-poster="assets/case_1.png" data-caption="Naughty Arena — кадр 1 из 4">
               <img class="gallery__current" src="assets/case_1.png" alt="Кадр 1 из игры Naughty Arena" loading="lazy" width="460" height="215">
@@ -287,38 +320,7 @@
           </div>
         </article>
 
-        <article class="case case--row reveal" data-delay="160">
-          <div class="case__gallery" data-gallery aria-label="Галерея Hunger">
-            <button class="case__media" type="button" data-gallery-open data-media="assets/case_4_0.png" data-media-poster="assets/case_4_0.png" data-caption="Hunger — кадр 1 из 4">
-              <img class="gallery__current" src="assets/case_4_0.png" alt="Кадр 1 из Hunger" loading="lazy" width="2559" height="1439">
-              <span class="case__play case__play--image" aria-hidden="true">⤢</span>
-              <span class="case__hint">открыть кадр</span>
-            </button>
 
-            <!-- Кадры галереи: добавь новую строку <img ...>, чтобы появилась следующая картинка -->
-            <template data-gallery-source>
-              <img src="assets/case_4_0.png" alt="Кадр 1 из Hunger">
-              <img src="assets/case_4_1.jpg" alt="Кадр 2 из Hunger">
-              <img src="assets/case_4_2.png" alt="Кадр 3 из Hunger">
-              <img src="assets/case_4_3.jpg" alt="Кадр 4 из Hunger">
-            </template>
-
-            <button class="gallery__arrow gallery__arrow--prev" type="button" data-gallery-prev aria-label="Предыдущий кадр">‹</button>
-            <button class="gallery__arrow gallery__arrow--next" type="button" data-gallery-next aria-label="Следующий кадр">›</button>
-            <div class="gallery__dots" aria-label="Выбрать кадр">
-              <button class="gallery__dot is-active" type="button" data-gallery-dot="0" aria-label="Кадр 1" aria-current="true"></button>
-              <button class="gallery__dot" type="button" data-gallery-dot="1" aria-label="Кадр 2"></button>
-              <button class="gallery__dot" type="button" data-gallery-dot="2" aria-label="Кадр 3"></button>
-              <button class="gallery__dot" type="button" data-gallery-dot="3" aria-label="Кадр 4"></button>
-            </div>
-          </div>
-          <div class="case__body">
-            <div class="case__meta"><span class="tag tag--accent">Проект</span><span class="tag">Steam · Survival horror</span></div>
-            <h3>Hunger</h3>
-            <p>Маленький сибирский городок отрезан от мира туманом. Людей почти не осталось: днём улицы заполняют чудовища из-под земли, ночью выжившие борются за ресурсы. Ты был обычным выжившим, пока не стал рабом огромного чудовища. Оно уже в твоём доме, требует еды и голодно…</p>
-            <div class="case__tags"><span>Addressables</span><span>Zenject</span><span>Localization</span><span>Timeline</span><span>URP</span></div>
-          </div>
-        </article>
       </div>
     </section>
 
