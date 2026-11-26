@@ -27,6 +27,11 @@
       sections.forEach((section, index) => {
         if (section.getBoundingClientRect().top <= 160) activeIndex = index;
       });
+
+      // В самом низу страницы активен последний раздел (контакты)
+      const atBottom = Math.ceil(y + window.innerHeight) >= document.documentElement.scrollHeight;
+      if (atBottom && sections.length) activeIndex = sections.length - 1;
+
       navLinks.forEach((link, index) => link.classList.toggle('is-active', index === activeIndex));
 
       ticking = false;
